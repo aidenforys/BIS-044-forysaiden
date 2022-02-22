@@ -1,1 +1,1 @@
-cat("Aiden, there are", as.double(as.Date("2022-5-6") - Sys.Date()), "left in the semester.")
+cat("Aiden, there are", as.double(as.Date("2022-5-6") - Sys.Date()), "days left in the semester.")
