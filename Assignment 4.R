@@ -1,0 +1,40 @@
+install.packages("tidyverse")
+library(tidyverse)
+install.packages("readxl")
+library(readxl)  #importing libraries
+
+data <- read_excel("dataset1.xls")
+View(data) #reading in the data and viewing it
+
+unique(data$Title) #see all the unique titles
+
+data$Title <- replace(data$Title,data$Title=="Aldermen","Alderman")
+data$Title <- replace(data$Title,data$Title=="Clerk","Clerk of Court")
+data$Title <- replace(data$Title,data$Title=="Constable(s)","Constable")
+
+data$Title <- replace(data$Title,data$Title=="Council Member III","Council Member")
+data$Title <- replace(data$Title,data$Title=="Council Member II","Council Member")
+data$Title <- replace(data$Title,data$Title=="Council Member I","Council Member")
+data$Title <- replace(data$Title,data$Title=="Councilmember at Large","Council Member")
+data$Title <- replace(data$Title,data$Title=="Councilmen","Council Member")
+data$Title <- replace(data$Title,data$Title=="Council Member(s)","Council Member")
+data$Title <- replace(data$Title,data$Title=="Council Member at Large","Council Member")
+data$Title <- replace(data$Title,data$Title=="Councilman at Large","Council Member")
+data$Title <- replace(data$Title,data$Title=="Councilmember","Council Member")
+data$Title <- replace(data$Title,data$Title=="Councilman","Council Member")
+
+data$Title <- replace(data$Title,data$Title=="District Judge","Judge")
+data$Title <- replace(data$Title,data$Title=="Judge, Family Court","Judge")
+data$Title <- replace(data$Title,data$Title=="City Judge","Judge")
+data$Title <- replace(data$Title,data$Title=="Judge, Court of Appeal","Judge")
+data$Title <- replace(data$Title,data$Title=="City Judge, City Court","Judge")
+data$Title <- replace(data$Title,data$Title=="Associate Justice","Judge")
+
+data$Title <- replace(data$Title,data$Title=="Justice of the Peace(s)","Justice of the Peace")
+data$Title <- replace(data$Title,data$Title=="Justice of the Peace, Parishwide","Justice of the Peace")
+
+data$Title <- replace(data$Title,data$Title=="Mayor-President","Mayor")
+
+countdata <- count(data,data$Title)
+
+View(countdata)
