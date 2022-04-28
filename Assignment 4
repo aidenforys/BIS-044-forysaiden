@@ -38,3 +38,4 @@ data$Title <- replace(data$Title,data$Title=="Mayor-President","Mayor")
 countdata <- count(data,data$Title)
 
 View(countdata)
+#100/100
