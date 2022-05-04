@@ -26,3 +26,4 @@ ggplot(data = graphdata) +
   theme_minimal()
 view(graphdata)
 
+#100/100
